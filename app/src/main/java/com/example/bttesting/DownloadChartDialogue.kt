@@ -16,11 +16,6 @@ import com.example.bttesting.databinding.DownloadingChartsBinding
 import com.example.bttesting.utils.NavigToDialog
 import com.example.bttesting.viewModels.BluetoothViewModel
 
-/* TUTORIALS INTERESSANTI
-    https://stackoverflow.com/questions/68601602/how-to-observe-live-data-for-alert-dialog
-    https://developer.android.com/guide/fragments/dialogs !!!!!!!!!!!!!!!!!!!
- */
-
 class DownloadChartDialogue: DialogFragment() {
 
     val btViewModel: BluetoothViewModel by activityViewModels()

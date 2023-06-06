@@ -40,7 +40,7 @@ class ConnectFragment : Fragment() {
 
         btIcon = binding.btIconConnect
 
-        // Adapter con eventListener: cambia colore di sfondo; quando si e' gia' connessi ad un device naviga semplicemente dentro alla schermata di livedata, altrimenti prova a connettersi
+        // RecyclerView Adapter con eventListener: cambia colore di sfondo sulla base di un attributo della dataclass; quando si e' gia' connessi ad un device naviga semplicemente dentro alla schermata di livedata, altrimenti prova a connettersi
         adapter = DevicesListAdapter(DeviceDataListener {
             if((btViewModel.connesso.value==true)&&(it.deviceHardwareAddress==btViewModel.btService.connectedDevice?.address)){this.findNavController().navigate(R.id.action_connectFragment_to_liveDataFragment)}
             else{
@@ -86,7 +86,7 @@ class ConnectFragment : Fragment() {
         binding.updateRelativeConnect.setOnClickListener {
             btViewModel.inizioRicerca()
         }
-        //se si tiene premuto icona bluetooth si disconnette
+        //se si tiene premuto l'icona bluetooth si disconnette
         binding.btIconConnectRelative.setOnLongClickListener {
             btViewModel.disconnect()
             false

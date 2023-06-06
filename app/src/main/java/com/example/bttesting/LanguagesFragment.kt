@@ -3,7 +3,6 @@ package com.example.bttesting
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.Intent.getIntent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.provider.Settings
@@ -11,10 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.NavUtils.navigateUpTo
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -22,40 +18,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
 import com.example.bttesting.databinding.LanguagesFragmentBinding
 import com.example.bttesting.viewModels.BluetoothViewModel
-import java.io.File
 
-
-/* Cose da fare:
-    Creare dei singoli file Strings e Styles per le lingue!!!!!
-    Con anche dimensione fonts e allineamento a destra (Testare con arabo)
- */
-
-/* AGGIUSTAMENTI GRAFICI:
-    1 - Aggiustare icona di selezione in settings!!!
-    2 - Creare un elemento ad hoc per la singola lingua e poi duplicare e cambiare nome in XML!!!!!
-    3 - RIMETTERE MENU ED ICONE COME PER LE ALTRE SCHERMATE!!!! (Bt Icon e back icon e navigazione veloce) - Fare con il copia ed incolla
- */
 
 /* CONCETTI:
     Si deve creare un file english ed un file generale?!?!? SIIII, perche' se si seleziona erroneamente una lingua si puo' tornare alla versione in inglese VERIFICA TORNARE AD INGLESE!!!!
         Si duplicano le stringhe
     In caso non trovi una stringa carica la versione in inglese!!!!
- */
-
-/* OCCORRE METTERE UN MESSAGGIO TOAST LOCALIZZATO IN CUI SI PRECISA CHE LE IMPOSTAZIONI AVRANNO EFFETTO DAL RIAVVIO SUCCESSIVO!!!!!!!!!!!!!!!!!!!!!!!
-
- */
-
-/* CASOMAI GLI OPERATORI NON RIUSCISSERO A RIAVVIARE L'APP CI DEVE POTER ESSERE LA POSSIBILITA' DI RIAVVIARE SU RICHIESTA CON DIALOG E PULSANTE!!!
-    Se non si trova altra possibilità
- */
-
-/* SCRITTA (non obbligatoria): verificare che il device si sia disconnesso (ma non necessaria)...forse meglio non mettere
-
- */
-
-/* UNA VOLTA SCELTA LA LINGUA IL MESSAGGIO DOVREBBE COMPARIRE NELLA LINGUA SCELTA
-
  */
 
 class LanguagesFragment : Fragment() {
@@ -72,11 +40,12 @@ class LanguagesFragment : Fragment() {
 
         //impostazioni per le lingua
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireActivity() /* Activity context */)
-        //val linguaggioShared = requireActivity().getSharedPreferences("language", Context.MODE_PRIVATE)
+        val linguaggioShared = requireActivity().getSharedPreferences("lingue", Context.MODE_PRIVATE)
         //val linguaggio: String = linguaggioShared.getString("", "en") !!
 
         //SE NULL SI DEVE IMPOSTARE IL VALORE DI DEFAULT!!!!!! COMUNQUE PREFERENCES VA IN SHARED PREFERENCES!!!!!! e quindi si puo' impostare con una schermata di icone ad hoc!!!!!
-        val linguaggio: String = sharedPreferences.getString("language", "") ?: "en"
+        //val linguaggio: String = linguaggioShared.getString("linguaScelta", "en")!!
+
 
         //Listeners per i pulsanti di navigazione
         //listeners per pulsanti laterali
@@ -103,12 +72,12 @@ class LanguagesFragment : Fragment() {
         //al momento della scelta si mette già la nuova lingua!!!!
 
         binding.englishLayoutLanguages.setOnClickListener {
-            modificaLingua(sharedPreferences,"en")
+            modificaLingua(linguaggioShared,"en")
             //Toast.makeText(requireActivity(), "SELEZIONATO LINGUA INGLESE", Toast.LENGTH_SHORT).show()
             restartDialog(requireActivity(), getString(R.string.title_english_dialog), getString(R.string.description_english_dialog), getString(R.string.positive_english_dialog), getString(R.string.negative_english_dialog))
         }
         binding.italianLayoutLanguages.setOnClickListener {
-            modificaLingua(sharedPreferences, "it")
+            modificaLingua(linguaggioShared, "it")
             //Toast.makeText(requireActivity(), "SELEZIONATO LINGUA ITALIANA", Toast.LENGTH_SHORT).show()
             restartDialog(requireActivity(),getString(R.string.title_italian_dialog), getString(R.string.description_italian_dialog), getString(R.string.positive_italian_dialog), getString(R.string.negative_italian_dialog))
         }
@@ -129,10 +98,10 @@ class LanguagesFragment : Fragment() {
     //DOVE SI DEVE METTERE RECREATE?? !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     fun modificaLingua(sharedLanguage: SharedPreferences, lingua: String){
         with (sharedLanguage.edit()) {
-            putString("language", lingua)
+            putString("linguaScelta", lingua)
             apply()
         }
-        val linguaggio: String = sharedLanguage.getString("language", "") ?: "en"
+        val linguaggio: String = sharedLanguage.getString("linguaScelta", "en")!!
         Log.d("giuseppe", "SCRITTO DENTRO MODIFICA ${lingua} e impostato ${linguaggio}")
         //requireActivity().recreate()
     }

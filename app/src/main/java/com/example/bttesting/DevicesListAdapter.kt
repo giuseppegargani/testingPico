@@ -7,21 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bttesting.databinding.DeviceslistSingleItemBinding
 
-/* RIFATTORIZZARE ONBINDVIEWHOLDER E ONCREATEVIEWHOLDER
- */
-
-/*RIFATTORIZZARE QUANDO SI FA' DATABINDING
- */
-
-/*BINDING ADAPTERS SE SI DEVONO COMPIERE DEI CALCOLI COMPLICATI
-    https://classroom.udacity.com/courses/ud9012/lessons/ee5a525f-0ba3-4d25-ba29-1fa1d6c567b8/concepts/de8e9f87-6cd0-4ff4-a20b-da5ffae7279c
- */
-
 class DevicesListAdapter(val clickListener: DeviceDataListener): RecyclerView.Adapter<DevicesListAdapter.ViewHolder>() {
 
-    companion object {
-        var last_position = 0
-    }
 
     var data = listOf<DeviceData>()
         set(value) {
