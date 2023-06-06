@@ -1,0 +1,113 @@
+<!-- Questo e' il file con tutte le stringhe in caso non si trovassero localizzate
+    Quindi dovrebbero essere in inglese!!!!
+ -->
+<!-- REINSERIRE ALCUNI PLACEHOLDERS CON VALIDAZIONE -->
+<resources>
+    <!-- Richiesta iniziale del permesso alla localizzazione -->
+    <string name="app_name">SilverLine App</string>
+    <string name="please_grant_loc_access">Please grant the App the localization permission.</string>
+    <string name="need_loc_access">This App needs the localization permission.</string>
+    <string name="fun_limted">Limited Functionality</string>
+    <string name="since_perm_not_granted">Because the localization permission has not be granted, this App will work with limited functionality.</string>
+    <string name="cmH2O">cmH<small> 2 </small>O</string>
+
+    <!-- Dialog iniziale di richiesta di chiave di licenza -->
+    <string name="license_title">Please insert the license key</string>
+    <string name="license_message">Please insert the license key in the field below in order to be able to use the app.</string>
+    <string name="license_positive_button">VERIFY</string>
+    <string name="license_negative_result">THE INSERTED LICENSE KEY IS NOT CORRECT</string>
+    <string name="license_positive_result">THE INSERTED KEY IS CORRECT</string>
+
+    <!-- SCREENS TEXT -->
+
+    <!-- Connect Screen -->
+    <string name="back_button_connect">BACK</string>
+    <string name="patient_connect">PATIENT</string>
+
+    <!-- Live Screen -->
+    <!-- Una parte legata alle scritte nella schermata -->
+    <string name="back_button_live">BACK</string>
+    <string name="patient_live">PATIENT</string>
+    <string name="intrapleural_pressure_live">INTRAPLEURAL PRESSURE</string>
+    <string name="last_liquid_live">LAST       24h</string>
+    <string name="average_air_live">AVG 1 HOUR</string>
+    <string name="minute_air_live">1 MINUTE</string>
+
+    <!-- Charts Screen -->
+    <string name="back_button_charts">BACK</string>
+    <string name="patient_charts">PATIENT</string>
+    <string name="time_charts">Time (hours)</string>
+    <string name="air_leakages_legenda_charts">Air Leakages [ml/min] Avg</string>
+    <string name="air_vacuum_legenda_charts">Vacuum Applied [cmH2O]</string>
+    <string name="liquid_legenda_charts">Liquid Amount [ml]</string>
+    <string name="liquid_houraxis_charts">Liquid Amount per Hour [ml]</string>
+    <string name="liquid_totalaxis_charts">Total Liquid Amount [ml]</string>
+
+    <!-- HISTORICAL SCREEN -->
+    <string name="back_button_historical">BACK</string>
+
+    <string name="rename_title_historical">Rename the file</string>
+    <string name="rename_description_historical">Please Insert the new Filename (without file extension) :</string>
+    <string name="rename_positive_historical">Rename</string>
+    <string name="rename_negative_historical">Cancel</string>
+
+    <!-- Stato messo un placeholder!!! che usa la funzione getString e prende dei parametri -->
+    <string name="delete_title_historical">Delete files</string>
+    <string name="delete_description_historical">Do you really want to delete the following files: %1$s ?</string>
+    <string name="delete_positive_historical">Delete</string>
+    <string name="delete_negative_historical">Cancel</string>
+
+    <!-- Settings Screen -->
+    <string name="pair_settings">PAIR NEW REDLINE</string>
+    <string name="languages_settings">LANGUAGES</string>
+    <string name="back_button_settings">BACK</string>
+
+    <!-- Pairing Screen -->
+    <string name="title_pairing">PAIR NEW REDLINE</string>
+    <string name="paired_pairing">PAIRED DEVICES</string>
+    <string name="unpaired_pairing">UNPAIRED DEVICES</string>
+    <string name="found_pairing">FOUND %1$S NEW DEVICES</string>
+    <string name="back_button_pairing">BACK</string>
+
+    <!-- Languages settings screen -->
+    <string name="back_button_languages">BACK</string>
+    <string name="title_languages">Languages</string>
+    <string name="english_languages">English</string>
+    <string name="italian_languages">Italian</string>
+    <string name="french_languages">French</string>
+
+
+    <!-- Other items different from screens: Layout of single item, Dialogs etc.. -->
+
+    <!-- UNPAIRING DIALOG -->
+    <string name="title_unpairing_dialog">UNPAIRING DEVICE %1$S</string>
+    <string name="description_unpairing_dialog">Please confirm you want to unpair the device %1$S</string>
+    <string name="positive_unpairing_dialog">Confirm Unpairing</string>
+    <string name="negative_unpairing_dialog">Cancel</string>
+
+    <!-- DEVICE LIST SINGLE ITEM -->
+    <string name="device_singleitem_patient">PATIENT</string>
+
+    <!-- DOWNLOADING DIALOG-->
+    <string name="downloading_message">DOWNLOADING DATABASE</string>
+
+    <!-- ERROR DOWNLOADING DIALOG -->
+    <string name="error_downloading_message">ATTENTION! \n AN ERROR HAS OCCURRED.</string>
+
+    <!-- CHOOSE LANGUAGE DIALOG -->
+    <!-- Si e' deciso di mostrare immediatamente la traduzione corrispondente alla lingua scelta, sulla base del linguaggio selezionato mostra subito le scritte in quella lingua -->
+    <!-- English language -->
+    <string name="title_english_dialog">Restart now or later</string>
+    <string name="description_english_dialog">You have choosen the english language. The change of language to be effective you need to restart the App. If you choose to restart now the App you\'ll get disconnected from the device.</string>
+    <string name="positive_english_dialog">Restart now</string>
+    <string name="negative_english_dialog">Restart later</string>
+    <!-- Italian language -->
+    <string name="title_italian_dialog">Riavvia adesso</string>
+    <string name="description_italian_dialog">Hai scelto la linguea italiana. Per essere effettivo il cambiamento di impostazioni della lingua selezionata richiede il riavvio dell\'app. Se si e\' attualmente connessi con una redline il riavvio dell\'app comporterà la disconessione.</string>
+    <string name="positive_italian_dialog">Riavvia adesso</string>
+    <string name="negative_italian_dialog">Posticipa il riavvio</string>
+
+
+    <!-- Scritte miste per Intent ed altro-->
+    <string name="send_intent_message">CHOOSE WISELY...</string>
+</resources>

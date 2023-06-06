@@ -1,0 +1,1494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!-- PER MODIFICARE L'ORDINE VELOCEMENTE SI DEVE SELEZIONARE UN GRUPPO DI ELEMENTI E SPOSTARLI TUTTI INSIEME (anche inframmezzati)
+        Per lavorare dentro scrollView si puo' togliere la visibilità (GONE) e lavorando prima sull'ultimo!!!
+        SOSTITUIRE LA FOTO DI COUPLING SCREEN E METTERE UNA UNITA' CHE E' DISACCOPPIATA ANCHE
+        - UNIFORMARE LE MISURE PER OGNI SCHERMATA (mettere le misure uguali per tutte le icone)!!!!!!!!!!!!!!!!!!!!!!
+        - FORSE POTREBBERO VOLERE CHE CLICCANDO SU UNA ICONE NELLA DESCRIZIONE, VENGA VISUALIZZATA IN QUALCHE MODO LA ZONA DELLA ICONA NELLO SCHERMO
+        - SI PUO' ANCHE TOGLIERE LA NOMENCLATURA SCREEN!!!
+    -->
+    <!-- IMPOSTAZIONI GRAFICHE
+        Mettere elementi di separazione e la possibilità di trovare in tempi rapidi la schermata corrispondente
+        Se un giallo troppo forte il colore si puo' customizzare!!!!
+        SI PUO TOGLIERE LO SFONDO OPACO!!!!!
+        - METTERE androidx.appcompat.widget.AppCompatButton INVECE DI BUTTON!!!!!!! in modo che si puo' cambiare la grafica!!!!!
+
+        - PIU' FACILE MODIFICARE LE IMPOSTAZIONI DA XML (di button)....questo vale in generale!!!!!
+
+        - SCRITTA "VEDI DESCRIZIONE PIU' APPROFONDITA SOTTO ALLA IMMAGINE"
+
+        - PER UNIFORMARE TUTTI GLI ELEMENTI SI PUO' USARE SELEZIONE MULTIPLA E POI CAMBIARE ATTRIBUTI (Padding, fontsize etc..)
+
+        - ICONE : AZIONI (descrizione toasts e navigazione reale), descrizione (SPIEGAZIONE LUNGA )
+
+        - SI PUO' ANCHE NAVIGARE DA UNA SCHERMATA ALL'ALTRA (in vari modi tra cui quello di far scomparire gli altri layout)- CON UNA PRESSIONE LUNOA OPPURE IN ALTRO MODO
+        Cliccare a lungo o altre cose!!!!
+        Esempio con un unico device!!!! e schermate simili
+    -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutHelp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sfondo_app_solo"
+        tools:context=".HelpFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/highlight_border_help"
+            android:padding="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/subtitleHelp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/subtitleHelp"
+            app:layout_constraintTop_toTopOf="@+id/subtitleHelp">
+
+            <Spinner
+                android:id="@+id/screensSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/full_trasparent"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/image_spinner"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/screensSpinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/screensSpinner"
+                app:layout_constraintTop_toTopOf="@+id/screensSpinner"
+                app:srcCompat="@drawable/spinner_arrow_100"
+                app:tint="@color/yellow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/titleHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/adamina"
+            android:text="Help Fragment"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/subtitleHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/adamina"
+            android:paddingStart="16sp"
+            android:paddingEnd="16sp"
+            android:text="Scegli la schermata dal menu a tendina :"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/layout_spinner"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleHelp" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/settingsLogoHelp"
+            app:layout_constraintTop_toBottomOf="@+id/layout_spinner">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/homescreenLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/titleHomescreenHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Home Screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/help_home_help"
+                            android:layout_width="130dp"
+                            android:layout_height="110dp"
+                            android:layout_marginEnd="155dp"
+                            android:layout_marginBottom="185dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageHomeHelp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/settings_home_help"
+                            android:layout_width="130dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="160dp"
+                            android:layout_marginEnd="157dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/selection_home_help"
+                            android:layout_width="200dp"
+                            android:layout_height="170dp"
+                            android:layout_marginStart="155dp"
+                            android:layout_marginTop="255dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageHomeHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/historical_home_help"
+                            android:layout_width="200dp"
+                            android:layout_height="170dp"
+                            android:layout_marginTop="255dp"
+                            android:layout_marginEnd="428dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageHomeHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/highlight_border_help"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:srcCompat="@drawable/screenshot_home" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/help_home_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/help_home_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/settings_home_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/settings_home_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/selection_home_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/selection_home_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/historical_home_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/historical_home_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/selectionscreenLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/titleSelectionscreenHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Selection Screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sidebar_selection_help"
+                            android:layout_width="88dp"
+                            android:layout_height="492dp"
+                            android:layout_marginBottom="81dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/bt_selection_help"
+                            android:layout_width="125dp"
+                            android:layout_height="105dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageSelectionHelp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/search_selection_help"
+                            android:layout_width="125dp"
+                            android:layout_height="105dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="153dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageSelectionHelp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/back_selection_help"
+                            android:layout_width="108dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/unit_selection_help"
+                            android:layout_width="540dp"
+                            android:layout_height="172dp"
+                            android:layout_marginStart="120dp"
+                            android:layout_marginTop="226dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageSelectionHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/screenshot_selectiondevice" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/sidebar_selection_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/sidebar_selection_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/bt_selection_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/bt_selection_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/search_selection_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/search_selection_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/back_selection_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_selection_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/unit_selection_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/unit_selection_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/livescreenLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/titleLiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Live Data Screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sidebar_live_help"
+                            android:layout_width="84dp"
+                            android:layout_height="492dp"
+                            android:layout_marginBottom="81dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/back_live_help"
+                            android:layout_width="108dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/patient_live_help"
+                            android:layout_width="250dp"
+                            android:layout_height="94dp"
+                            android:layout_marginStart="238dp"
+                            android:layout_marginTop="35dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/time_live_help"
+                            android:layout_width="370dp"
+                            android:layout_height="115dp"
+                            android:layout_marginTop="36dp"
+                            android:layout_marginEnd="227dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageLiveHelp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/bt_live_help"
+                            android:layout_width="125dp"
+                            android:layout_height="105dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageLiveHelp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/liquid_live_help"
+                            android:layout_width="429dp"
+                            android:layout_height="222dp"
+                            android:layout_marginEnd="18dp"
+                            android:layout_marginBottom="292dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageLiveHelp"
+                            app:layout_constraintEnd_toEndOf="@+id/imageLiveHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/air_live_help"
+                            android:layout_width="429dp"
+                            android:layout_height="222dp"
+                            android:layout_marginEnd="18dp"
+                            android:layout_marginBottom="62dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageLiveHelp"
+                            app:layout_constraintEnd_toEndOf="@+id/imageLiveHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/pressure_live_help"
+                            android:layout_width="588dp"
+                            android:layout_height="220dp"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginBottom="62dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageLiveHelp"
+                            app:layout_constraintStart_toEndOf="@+id/sidebar_live_help"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/charts_live_help"
+                            android:layout_width="194dp"
+                            android:layout_height="160dp"
+                            android:layout_marginStart="91dp"
+                            android:layout_marginTop="222dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/suction_live_help"
+                            android:layout_width="200dp"
+                            android:layout_height="122dp"
+                            android:layout_marginStart="382dp"
+                            android:layout_marginTop="255dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageLiveHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/screenshot_live" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/sidebar_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/sidebar_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/back_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/patient_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/patient_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/time_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/time_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/bt_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/bt_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/liquid_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/liquid_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/air_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/air_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pressure_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/pressure_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/charts_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/charts_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/suction_live_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/suction_live_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/chartscreenLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/titleChartsHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Charts Screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/back_charts_help"
+                            android:layout_width="108dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageChartsHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/patient_charts_help"
+                            android:layout_width="250dp"
+                            android:layout_height="94dp"
+                            android:layout_marginStart="238dp"
+                            android:layout_marginTop="35dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="@+id/imageChartsHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageChartsHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/pressure_charts_help"
+                            android:layout_width="106dp"
+                            android:layout_height="122dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginEnd="456dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageChartsHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageChartsHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/air_charts_help"
+                            android:layout_width="106dp"
+                            android:layout_height="122dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginEnd="323dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageChartsHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageChartsHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/liquid_charts_help"
+                            android:layout_width="106dp"
+                            android:layout_height="122dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginEnd="188dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageChartsHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageChartsHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/bt_charts_help"
+                            android:layout_width="125dp"
+                            android:layout_height="105dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageChartsHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageChartsHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/draw_charts_help"
+                            android:layout_width="1110dp"
+                            android:layout_height="490dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="165dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="@+id/imageChartsHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageChartsHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageChartsHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/screenshot_chart" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/back_charts_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_charts_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/patient_charts_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/patient_charts_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pressure_charts_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/pressure_charts_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/air_charts_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/air_charts_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/liquid_charts_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/liquid_charts_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/bt_charts_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/bt_charts_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/draw_charts_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/draw_charts_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/historicalscreenLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/titleHistoricalHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Historical screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/back_historical_help"
+                            android:layout_width="108dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/visualization_historical_help"
+                            android:layout_width="120dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="273dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/units_historical_help"
+                            android:layout_width="410dp"
+                            android:layout_height="132dp"
+                            android:layout_marginStart="213dp"
+                            android:layout_marginTop="172dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sidebar_historical_help"
+                            android:layout_width="84dp"
+                            android:layout_height="492dp"
+                            android:layout_marginBottom="81dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageHistoricalHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/screenshot_historical" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/back_historical_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_historical_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/visualization_historical_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/visualization_historical_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/units_historical_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/units_historical_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sidebar_historical_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/sidebar_historical_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/historicalActiveLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/titleHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Historical screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/backHistoricalActiveHelp"
+                            android:layout_width="108dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalActiveHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/visualizationHistoricalActiveHelp"
+                            android:layout_width="120dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="273dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalActiveHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/renameHistoricalActiveHelp"
+                            android:layout_width="120dp"
+                            android:layout_height="106dp"
+                            android:layout_marginTop="33dp"
+                            android:layout_marginEnd="290dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageHistoricalActiveHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalActiveHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/deleteHistoricalActiveHelp"
+                            android:layout_width="120dp"
+                            android:layout_height="106dp"
+                            android:layout_marginTop="33dp"
+                            android:layout_marginEnd="155dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageHistoricalActiveHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalActiveHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sendHistoricalActiveHelp"
+                            android:layout_width="120dp"
+                            android:layout_height="106dp"
+                            android:layout_marginTop="33dp"
+                            android:layout_marginEnd="22dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageHistoricalActiveHelp"
+                            app:layout_constraintTop_toTopOf="@+id/imageHistoricalActiveHelp"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sidebarHistoricalActiveHelp"
+                            android:layout_width="84dp"
+                            android:layout_height="492dp"
+                            android:layout_marginBottom="81dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/unitHistoricalActiveHelp"
+                            android:layout_width="410dp"
+                            android:layout_height="132dp"
+                            android:layout_marginStart="213dp"
+                            android:layout_marginTop="172dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageHistoricalActiveHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/screenshot_menu_historical" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/backTextHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_historical_help"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/visualizationTextHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/visualization_historical_help"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/renameTextHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_historical_help"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/deleteTextHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_historical_help"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sendTextHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_historical_help"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sidebarTextHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/sidebar_historical_help"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/unitTextHistoricalActiveHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/units_historical_help"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/settingsscreenLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/titleSettingsHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Settings Screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/back_settings_help"
+                            android:layout_width="108dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/coupling_settings_help"
+                            android:layout_width="240dp"
+                            android:layout_height="208dp"
+                            android:layout_marginStart="246dp"
+                            android:layout_marginTop="240dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sidebar_settings_help"
+                            android:layout_width="84dp"
+                            android:layout_height="492dp"
+                            android:layout_marginBottom="81dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageSettingsHelp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageSettingsHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/screenshot_settings" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/back_settings_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_settings_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/coupling_settings_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/coupling_settings_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sidebar_settings_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/sidebar_settings_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/couplingscreenLayoutHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/titleCouplingHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:fontFamily="@font/adamina"
+                        android:padding="10dp"
+                        android:text="Coupling Screen"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/back_coupling_help"
+                            android:layout_width="108dp"
+                            android:layout_height="106dp"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="33dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/search_coupling_help"
+                            android:layout_width="125dp"
+                            android:layout_height="105dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="153dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageCouplingHelp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/bt_coupling_help"
+                            android:layout_width="125dp"
+                            android:layout_height="105dp"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintEnd_toEndOf="@+id/imageCouplingHelp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/paired_coupling_help"
+                            android:layout_width="350dp"
+                            android:layout_height="210dp"
+                            android:layout_marginStart="388dp"
+                            android:layout_marginTop="184dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/unpaired_coupling_help"
+                            android:layout_width="350dp"
+                            android:layout_height="199dp"
+                            android:layout_marginStart="388dp"
+                            android:layout_marginBottom="70dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageCouplingHelp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sidebar_coupling_help"
+                            android:layout_width="84dp"
+                            android:layout_height="492dp"
+                            android:layout_marginBottom="81dp"
+                            android:background="@drawable/border_help"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageCouplingHelp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageView
+                            android:id="@+id/imageCouplingHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/screenshot_coupling" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/back_coupling_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/back_coupling_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/search_coupling_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/search_coupling_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/bt_coupling_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/bt_coupling_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/paired_coupling_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/paired_coupling_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/unpaired_coupling_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/unpaired_coupling_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/sidebar_coupling_help_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/adamina"
+                        android:padding="8dp"
+                        android:text="@string/sidebar_coupling_help_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/patientLogoHelp"
+            android:layout_width="90dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/halfcircle"
+            android:backgroundTint="@color/azzurro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoDrawerHelp">
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hospital_bed"
+                app:tint="@color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/historicalLogoHelp"
+            android:layout_width="90dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/halfcircle"
+            android:backgroundTint="@color/azzurro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/patientLogoHelp">
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/folder"
+                app:tint="@color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/settingsLogoHelp"
+            android:layout_width="90dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/halfcircle"
+            android:backgroundTint="@color/azzurro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/historicalLogoHelp">
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_settings_48" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/helpLogoHelp"
+            android:layout_width="90dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/halfcircle"
+            android:backgroundTint="@color/orange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsLogoHelp">
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_help_outline_48" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/logoDrawerHelp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_follow_the_signs_100"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

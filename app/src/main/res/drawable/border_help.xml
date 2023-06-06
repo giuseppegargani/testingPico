@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BORDO PER EVIDENZIARE GLI ELEMENTI MA SI POSSONO METTERE ANCHE ALTRI DISEGNI
+    VEDIAMO IL PADDING O POSIZIONE
+
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <!--- stroke android:width="5px" android:color="#b00020" />-->
+        </shape>
+    </item>
+</selector>

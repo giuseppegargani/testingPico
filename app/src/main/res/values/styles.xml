@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Questo e' lo stile dell' info Dialog dentro a help screen
+    Si puo' anche customizzare ulteriormente come dialog Fragment
+
+    Creare un custom Alert Dialog che estende Alert Dialog
+    https://medium.com/android-beginners/create-reusable-alert-dialog-in-android-bd0b84487675
+    https://stackoverflow.com/questions/7825720/extending-alertdialogs-in-android-where-to-find-examples-how-to-get-title-and
+-->
+<!-- METTERE CONSTRAINT LAYOUT NELLE SCRITTE IN MODO CHE SE SI RIDIMENSIONA RIMANE CENTRATA COME SCRITTA DA TUTTI I LATI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<resources>
+    <!--style name="HelpDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/design_default_color_primary</item>
+        <item name="android:textColorPrimary">#ffff00</item>
+        <item name="android:background">@color/azzurro</item>
+    </style-->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColorPrimary">#ffff00</item>
+        <item name="android:background">@color/azzurro</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#ffff00</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Si possono mettere tutta una serie di impostazioni-->
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#ffff00</item>
+        <item name="android:layout_marginStart">120dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- LOCAL SCREENS STYLES -->
+    <style name="languagesLayoutSettings">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- DEVICE LIST SINGLE ITEM -->
+    <style name="device_singleitem_patient">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

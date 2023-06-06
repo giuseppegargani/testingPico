@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Si puo' applicare anche un Theme (in main Activity)-->
+    <!--Si possono applicare anche immagini e altro e loghi (Header per esempio)-->
+    <!--Senza ActionBar https://www.examplefiles.net/cs/414895 -->
+    <!--Si può anche mettere un menù con sole icone facilmente-->
+    <!--Si può mettere NavigationView-->
+
+
+    <item
+        android:id="@+id/connectFragment"
+        android:icon="@drawable/hospital_bed"
+        android:title="Threatment" />
+    <item
+        android:id="@+id/historicalFragment"
+        android:icon="@drawable/folder"
+        android:title="Historical Data" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_baseline_settings_48"
+        android:title="Settings" />
+    <item
+        android:id="@+id/helpFragment"
+        android:icon="@drawable/ic_baseline_help_outline_48"
+        android:title="Help" />
+    <item
+        android:id="@+id/liveDataFragment"
+        android:icon="@drawable/machinery"
+        android:title="Live Data" />
+</menu>

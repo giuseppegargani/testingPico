@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BORDO PER EVIDENZIARE GLI ELEMENTI MA SI POSSONO METTERE ANCHE ALTRI DISEGNI
+    VEDIAMO IL PADDING O POSIZIONE
+-->
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+            <solid android:color="@color/material_on_surface_disabled" />
+            <stroke android:width="3dp" android:color="@color/yellow" />
+        </shape>
+    </item>
+</selector>-->
+
+<!-- Ci sono due possibili versioni
+    https://stackoverflow.com/questions/4772537/i-need-to-change-the-stroke-color-to-a-user-defined-color-nothing-to-do-with-th
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="5dp" />
+
+    <solid android:color="@color/material_on_surface_disabled" />
+
+    <stroke
+        android:width="3dp"
+        android:color="@color/yellow" />
+
+</shape>

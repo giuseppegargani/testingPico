@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/connectFragment"
+        android:name="com.example.bttesting.ConnectFragment"
+        android:label="ConnectFragment" >
+        <action
+            android:id="@+id/action_connectFragment_to_liveDataFragment"
+            app:destination="@id/liveDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/liveDataFragment"
+        android:name="com.example.bttesting.LiveDataFragment"
+        android:label="LiveDataFragment" >
+        <action
+            android:id="@+id/action_liveDataFragment_to_graphFragment"
+            app:destination="@id/graphFragment" />
+        <action
+            android:id="@+id/action_liveDataFragment_to_downloadChartDialogue3"
+            app:destination="@id/downloadChartDialogue3" />
+        <action
+            android:id="@+id/action_liveDataFragment_to_errorDownloadDialog"
+            app:destination="@id/errorDownloadDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bttesting.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_connectFragment"
+            app:destination="@id/connectFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historicalFragment"
+            app:destination="@id/historicalFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/graphFragment"
+        android:name="com.example.bttesting.GraphFragment"
+        android:label="graph_fragment"
+        tools:layout="@layout/graph_fragment" >
+        <action
+            android:id="@+id/action_graphFragment_to_downloadChartDialogue3"
+            app:destination="@id/downloadChartDialogue3" />
+        <argument
+            android:name="offline"
+            app:argType="boolean" />
+        <argument
+            android:name="uri"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/historicalFragment"
+        android:name="com.example.bttesting.HistoricalFragment"
+        android:label="HistoricalFragment" >
+        <action
+            android:id="@+id/action_historicalFragment_to_graphFragment"
+            app:destination="@id/graphFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.bttesting.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_pairFragment"
+            app:destination="@id/pairFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_languagesFragment"
+            app:destination="@id/languagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.bttesting.HelpFragment"
+        android:label="HelpFragment" />
+    <fragment
+        android:id="@+id/pairFragment"
+        android:name="com.example.bttesting.PairFragment"
+        android:label="PairFragment" >
+        <action
+            android:id="@+id/action_pairFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/downloadChartDialogue3"
+        android:name="com.example.bttesting.DownloadChartDialogue"
+        android:label="DownloadChartDialogue" />
+    <dialog
+        android:id="@+id/errorDownloadDialog"
+        android:name="com.example.bttesting.ErrorDownloadDialog"
+        android:label="ErrorDownloadDialog" >
+        <action
+            android:id="@+id/action_errorDownloadDialog_to_liveDataFragment"
+            app:destination="@id/liveDataFragment"
+            app:popUpTo="@id/connectFragment" />
+        <action
+            android:id="@+id/action_errorDownloadDialog_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_errorDownloadDialog_to_liveDataFragment2"
+            app:destination="@id/liveDataFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/languagesFragment"
+        android:name="com.example.bttesting.LanguagesFragment"
+        android:label="LanguagesFragment" />
+</navigation>

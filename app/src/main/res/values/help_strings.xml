@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Qui vanno inserite le descrizioni della pagina con le istruzioni!!!!!! -->
+<!--Si deve fare pulizia e mettere tutto ordinato
+    inserendo anche i valori al suo interno in modo tale da completare il tutto
+    - SI DEVONO CAMBIARE I NOMI E METTERE TUTTE LE STRINGHE QUI!!! SENZA LASCIARE NIENTE HARDCODED!!!
+    - Nella sezione descrizione viene fatta una breve descrizione DELLA FUNZIONALITà e poi si passa ad analizzare il funzionamento delle varie icone
+        Ogni volta che si clicca da qualche parte COMPARE IN TOAST LA NOMENCLATURA DELLA ICONA (in modo da avere un riscontro con la descrizione) - MA NON CI SI DEVE ASPETTARE LA LETTURA DELLA DESCRIZIONE
+        La descrizione ha la sola funzione di un riepilogo!!!!!!!
+
+    - RICERCARE LA DESCRIZIONE MIGLIORE E IL NOME PIU' SIGNIFICATIVO!!!
+
+    - SI PUO' METTERE UNA SCRITTA IN FILIGRANA che indica che non siamo in una schermata vera
+
+    - SI PUO' METTERE ANCHE UNA DESCRIZIONI GENERALE DELLA SINGOLA SCHERMATA COME INTRODUZIONE ALLE DESCRIZIONI DEI SINGOLI PULSANTI
+    LA DESCRIZIONE GENERALE PUO' ANCHE ESSERE MESSA PRIMA DELLA SCHERMATA GENERALE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->
+<!-- SI DOVREBBERO METTERE SIA LE STRINGHE DEL TOAST SIA DELLA DESCRIZIONE SOTTO ALLA IMMAGINE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<resources>
+    <string name="homescreen_help">Generic placeholder string</string>
+
+    <!-- ********************************************  HOME SCREEN : ***************************************************************** -->
+
+    <!-- Ogni elemento ha: titolo, contenuto, toast, descrizione-->
+    <string name="settings_home_help"> - ICONA IMPOSTAZIONI: permette di navigare nella schermata della impostazioni per accoppiare o disaccoppiare le unità. </string>
+    <string name="settings_home_help_title"> ICONA SETTINGS </string>
+    <string name="settings_home_help_content"> Questo e\' il contenuto dell\' info dialog della icona settings di home screen</string>
+    <string name="settings_home_help_description"> - ICONA SETTINGS: descrizione della icona settings sotto la schermata di homescreen</string>
+    <string name="settings_home_help_message"> SUL MENU\' DELLA ICONA SETTINGS POTETE VEDERE COSA SUCCEDE SE SI CLICCA SULLA ICONA SETTINGS: CLICCANDO SU RESUME SI RIMANE NELLA SCHERMATA, CLICCANDO SU NAVIGATE SI NAVIGA ALLA SCHERMATA DELLE IMPOSTAZIONI </string>
+
+    <string name="help_home_help"> - ICONA HELP: permette di accedere alla schermata delle istruzioni e poter scoprire il funzionamento delle varie schermate. </string>
+    <string name="help_home_help_title"> ICONA HELP </string>
+    <string name="help_home_help_content"> Questo e\' il contenuto dell\' info dialog della icona help di home screen</string>
+    <string name="help_home_help_description"> - ICONA HELP: descrizione della icona help sotto la schermata di homescreen</string>
+    <string name="help_home_help_message"> SUL MENU\' DELLA ICONA HELP POTETE VEDERE COSA SUCCEDE SE SI CLICCA SULLA ICONA HELP: CLICCANDO SU RESUME SI RIMANE NELLA SCHERMATA </string>
+
+    <string name="selection_home_help"> - ICONA SELEZIONE UNITA\': permette di accedere alla schermata con una lista delle unità disponibili per il collegamento </string>
+    <string name="selection_home_help_title"> ICONA SELECTION </string>
+    <string name="selection_home_help_content"> Questo e\' il contenuto dell\' info dialog della icona selection di home screen</string>
+    <string name="selection_home_help_description"> - ICONA SELECTION: descrizione della icona selection sotto la schermata di homescreen</string>
+    <string name="selection_home_help_message"> SUL MENU\' DELLA ICONA SELECTION POTETE VEDERE COSA SUCCEDE SE SI CLICCA SULLA ICONA SELECTION: CLICCANDO SU RESUME SI RIMANE NELLA SCHERMATA, CLICCANDO SU NAVIGATE SI NAVIGA ALLA SCHERMATA DELLA SCELTA DELLA UNITA\' </string>
+
+    <string name="historical_home_help"> - ICONA DATI STORICI: permette di accedere alla schermata con la raccolta dei dati storici dei pazienti. </string>
+    <string name="historical_home_help_title"> ICONA DATI STORICI </string>
+    <string name="historical_home_help_content"> Questo e\' il contenuto dell\' info dialog della icona dati storici di home screen</string>
+    <string name="historical_home_help_description"> - ICONA DATI STORICI: descrizione della icona dati storici sotto la schermata di homescreen</string>
+    <string name="historical_home_help_message"> SUL MENU\' DELLA ICONA HISTORICAL POTETE VEDERE COSA SUCCEDE SE SI CLICCA SULLA ICONA HISTORICAL: CLICCANDO SU RESUME SI RIMANE NELLA SCHERMATA, CLICCANDO SU NAVIGATE SI NAVIGA ALLA SCHERMATA DEI DATI STORICI </string>
+
+
+    <!-- ********************************************  SELECTION SCREEN : ***************************************************************** -->
+
+    <string name="sidebar_selection_help"> - ICONE SIDEBAR: Cliccare su una di queste icone permette la navigazione veloce alla schermata corrispondente. </string>
+    <string name="sidebar_selection_help_title"> ICONE SIDEBAR </string>
+    <string name="sidebar_selection_help_content"> Questo e\' il contenuto dell\' info dialog delle icone sidebar di selection screen</string>
+    <string name="sidebar_selection_help_description"> - ICONE SIDEBAR: descrizione delle icone sidebar sotto la schermata di selection</string>
+    <string name="sidebar_selection_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE SIDEBAR DI SELECTION</string>
+
+    <string name="bt_selection_help"> - ICONA BLUETOOTH: Il colore di questa icona permette di sapere se siamo collegati o meno: se di colore verde significa che siamo collegati. Tenendo premuto ci si disconnette. </string>
+    <string name="bt_selection_help_title"> ICONA BLUETOOTH </string>
+    <string name="bt_selection_help_content"> Questo e\' il contenuto dell\' info dialog della icona bluetooth di selection screen</string>
+    <string name="bt_selection_help_description"> - ICONA BLUETOOTH: descrizione della icona bluetooth sotto la schermata di selection</string>
+    <string name="bt_selection_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BLUETOOTH DI SELECTION</string>
+
+    <string name="search_selection_help"> - ICONA SEARCH: questa icona permette di sapere se il dispositivo e\' ancora in fase di ricerca oppure l\'ha completata. Cliccando lancia nuovamente la ricerca. </string>
+    <string name="search_selection_help_title"> ICONA SEARCH </string>
+    <string name="search_selection_help_content"> Questo e\' il contenuto dell\' info dialog della icona search di selection screen</string>
+    <string name="search_selection_help_description"> - ICONA SEARCH: descrizione della icona search sotto la schermata di selection</string>
+    <string name="search_selection_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA SEARCH DI SELECTION</string>
+
+    <string name="back_selection_help"> - ICONA BACK: cliccando su questa icona si ritorna alla homescreen. </string>
+    <string name="back_selection_help_title"> ICONA BACK </string>
+    <string name="back_selection_help_content"> Questo e\' il contenuto dell\' info dialog della icona back di selection screen</string>
+    <string name="back_selection_help_description"> - ICONA BACK: descrizione della icona back sotto la schermata di selection</string>
+    <string name="back_selection_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BACK DI SELECTION</string>
+
+    <string name="unit_selection_help"> - ICONE SINGOLE UNITA\': queste sono le icone che sono disponibili per la connessione. Cliccando su una di esse si apre la connessione e si naviga in Livedata. </string>
+    <string name="unit_selection_help_title"> ICONE SINGOLE UNITA\' </string>
+    <string name="unit_selection_help_content"> Questo e\' il contenuto dell\' info dialog delle icone delle singole unità di selection screen</string>
+    <string name="unit_selection_help_description"> - ICONE SINGOLE UNITA\': descrizione delle icone delle singole unità sotto la schermata di selection</string>
+    <string name="unit_selection_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE SINGOLE UNITA\' DI SELECTION</string>
+
+
+    <!-- ********************************************  LIVE SCREEN : ***************************************************************** -->
+
+    <string name="sidebar_live_help"> - ICONE SIDEBAR: Cliccare su una di queste icone permette la navigazione veloce alla schermata corrispondente. </string>
+    <string name="sidebar_live_help_title"> ICONE SIDEBAR </string>
+    <string name="sidebar_live_help_content"> Questo e\' il contenuto dell\' info dialog delle icone sidebar di live screen</string>
+    <string name="sidebar_live_help_description"> - ICONE SIDEBAR: descrizione delle icone sidebar sotto la schermata di live</string>
+    <string name="sidebar_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE SIDEBAR DI LIVE</string>
+
+    <string name="back_live_help"> - ICONA BACK: cliccando su questa icona si ritorna alla schermata di selezione unità. </string>
+    <string name="back_live_help_title"> ICONA BACK </string>
+    <string name="back_live_help_content"> Questo e\' il contenuto dell\' info dialog della icona back di live screen</string>
+    <string name="back_live_help_description"> - ICONA BACK: descrizione della icona back sotto la schermata di live</string>
+    <string name="back_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BACK DI LIVE</string>
+
+    <string name="time_live_help"> - RIQUADRO TIME: Questo riquadro mostra la durata della terapia del paziente e l\' orario attuale. </string>
+    <string name="time_live_help_title"> RIQUADRO TIME </string>
+    <string name="time_live_help_content"> Questo e\' il contenuto dell\' info dialog del riquadro time di live screen</string>
+    <string name="time_live_help_description"> - RIQUADRO TIME: descrizione del riquadro time sotto la schermata di live</string>
+    <string name="time_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DEL RIQUADRO TIME DI LIVE</string>
+
+    <string name="bt_live_help"> - ICONA BLUETOOTH: Il colore di questa icona permette di sapere se siamo collegati o meno: se di colore verde significa che siamo collegati. </string>
+    <string name="bt_live_help_title"> ICONA BLUETOOTH </string>
+    <string name="bt_live_help_content"> Questo e\' il contenuto dell\' info dialog della icona bluetooth di live screen</string>
+    <string name="bt_live_help_description"> - ICONA BLUETOOTH: descrizione della icona bluetooth sotto la schermata di live</string>
+    <string name="bt_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BLUETOOTH DI LIVE</string>
+
+    <string name="liquid_live_help"> - RIQUADRO RACCOLTA LIQUIDI: Questo riquadro mostra i valori della raccolta liquidi.
+        Cliccando sul riquadro si ottiene il valore delle ultime 24 ore. </string>
+    <string name="liquid_live_help_title"> RIQUADRO RACCOLTA LIQUIDI </string>
+    <string name="liquid_live_help_content"> Questo e\' il contenuto dell\' info dialog del riquadro raccolta liquidi di live screen</string>
+    <string name="liquid_live_help_description"> - RIQUADRO RACCOLTA LIQUIDI: descrizione del riquadro raccolta liquidi sotto la schermata di live</string>
+    <string name="liquid_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DEL RIQUADRO RACCOLTA LIQUIDI DI LIVE</string>
+
+    <string name="air_live_help"> - RIQUADRO PERDITE AEREE: Questo riquadro mostra i valori delle perdite aeree.
+        Cliccando sul riquadro si ottiene il valore delle ..... (ricontrollare tutti)</string>
+    <string name="air_live_help_title"> RIQUADRO PERDITE AEREE </string>
+    <string name="air_live_help_content"> Questo e\' il contenuto dell\' info dialog del riquadro perdite aeree di live screen</string>
+    <string name="air_live_help_description"> - RIQUADRO PERDITE AEREE: descrizione del riquadro perdite aeree sotto la schermata di live</string>
+    <string name="air_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DEL RIQUADRO PERDITE AEREE DI LIVE</string>
+
+    <string name="pressure_live_help"> - RIQUADRO DELLA PRESSIONE INTRAPLEURICA:
+        Questo riquadro mostra il valore minimo, massimo (e medio?) della pressione intrapleurica. </string>
+    <string name="pressure_live_help_title"> RIQUADRO PRESSIONE INTRAPLEURICA </string>
+    <string name="pressure_live_help_content"> Questo e\' il contenuto dell\' info dialog del riquadro pressione intrapleurica di live screen</string>
+    <string name="pressure_live_help_description"> - RIQUADRO PRESSIONE INTRAPLEURICA: descrizione del riquadro pressione intrapleurica sotto la schermata di live</string>
+    <string name="pressure_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DEL RIQUADRO PRESSIONE INTRAPLEURICA DI LIVE</string>
+
+    <string name="charts_live_help"> - ICONA GRAFICI: Cliccando su questa icona si accede alla schermata per la visualizzazione dei grafici. </string>
+    <string name="charts_live_help_title"> ICONA GRAFICI </string>
+    <string name="charts_live_help_content"> Questo e\' il contenuto dell\' info dialog della icona grafici di live screen</string>
+    <string name="charts_live_help_description"> - ICONA GRAFICI: descrizione della icona grafici sotto la schermata di live</string>
+    <string name="charts_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA GRAFICI DI LIVE</string>
+
+    <string name="suction_live_help"> - RIQUADRO ASPIRAZIONE: Questo riquadro mostra il valore della aspirazione attualmente impostato. </string>
+    <string name="suction_live_help_title"> RIQUADRO ASPIRAZIONE </string>
+    <string name="suction_live_help_content"> Questo e\' il contenuto dell\' info dialog del riquadro aspirazione di live screen</string>
+    <string name="suction_live_help_description"> - RIQUADRO ASPIRAZIONE: descrizione del riquadro aspirazione sotto la schermata di live</string>
+    <string name="suction_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DEL RIQUADRO ASPIRAZIONE DI LIVE</string>
+
+    <string name="patient_live_help"> - RIQUADRO PAZIENTE: questo riquadro permette di conoscere a quale unità/paziente siamo attualmente connessi. </string>
+    <string name="patient_live_help_title"> RIQUADRO PAZIENTE </string>
+    <string name="patient_live_help_content"> Questo e\' il contenuto dell\' info dialog del riquadro paziente di live screen</string>
+    <string name="patient_live_help_description"> - RIQUADRO PAZIENTE: descrizione del riquadro paziente sotto la schermata di live</string>
+    <string name="patient_live_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DEL RIQUADRO PAZIENTE DI LIVE</string>
+
+
+    <!-- ********************************************  CHARTS SCREEN : ***************************************************************** -->
+
+    <string name="back_charts_help"> - ICONA BACK: cliccando su questa icona si ritorna alla schermata dell\' osservazione live dei valori del paziente. </string>
+    <string name="back_charts_help_title"> ICONA BACK </string>
+    <string name="back_charts_help_content"> Questo e\' il contenuto dell\' info dialog della icona back della schermata dei grafici</string>
+    <string name="back_charts_help_description"> - ICONA BACK: descrizione della icona back sotto la schermata dei grafici</string>
+    <string name="back_charts_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BACK DELLA SCHERMATA DEI GRAFICI</string>
+
+    <string name="patient_charts_help"> - RIQUADRO PAZIENTE: questa icona permette di conoscere a quale unità/paziente siamo attualmente connessi. </string>
+    <string name="patient_charts_help_title"> RIQUADRO PAZIENTE </string>
+    <string name="patient_charts_help_content"> Questo e\' il contenuto dell\' info dialog del riquadro paziente della schermata dei grafici</string>
+    <string name="patient_charts_help_description"> - RIQUADRO PAZIENTE: descrizione del riquadro paziente sotto la schermata dei grafici</string>
+    <string name="patient_charts_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DEL RIQUADRO PAZIENTE DELLA SCHERMATA DEI GRAFICI</string>
+
+    <string name="pressure_charts_help"> - ICONA GRAFICO PRESSIONE INTRAPLEURICA: Cliccando su questa icona si accede al grafico della pressione intrapleurica.
+        Se lo sfondo e\' di colore arancione significa che il grafico attualmente selezionato e\' proprio quella della pressione intrapleurica. </string>
+    <string name="pressure_charts_help_title"> ICONA GRAFICO PRESSIONE INTRAPLEURICA </string>
+    <string name="pressure_charts_help_content"> Questo e\' il contenuto dell\' info dialog della icona del grafico pressione intrapleurica della schermata dei grafici</string>
+    <string name="pressure_charts_help_description"> - ICONA GRAFICO PRESSIONE INTRAPLEURICA: descrizione della icona del grafico pressione intrapleurica sotto la schermata grafici</string>
+    <string name="pressure_charts_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA GRAFICO PRESSIONE INTRAPLEURICA DELLA SCHERMATA GRAFICI</string>
+
+    <string name="air_charts_help"> - ICONA GRAFICO PERDITE AEREE: Cliccando su questa icona si accede al grafico delle perdite aeree.
+        Se lo sfondo e\' di colore arancione significa che il grafico attualmente selezionato e\' proprio quella delle perdite aeree.</string>
+    <string name="air_charts_help_title"> ICONA GRAFICO PERDITE AEREE </string>
+    <string name="air_charts_help_content"> Questo e\' il contenuto dell\' info dialog della icona del grafico delle perdite aeree della schermata dei grafici</string>
+    <string name="air_charts_help_description"> - ICONA GRAFICO PERDITE AEREE: descrizione della icona del grafico delle perdite aeree sotto la schermata grafici</string>
+    <string name="air_charts_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA DEL GRAFICO DELLE PERDITE AEREE DELLA SCHERMATA GRAFICI</string>
+
+    <string name="liquid_charts_help"> - ICONA GRAFICO RACCOLTA LIQUIDI: Cliccando su questa icona si accede al grafico della raccolta liquidi.
+        Se lo sfondo e\' di colore arancione significa che il grafico attualmente selezionato e\' proprio quella della raccolta liquidi. </string>
+    <string name="liquid_charts_help_title"> ICONA GRAFICO RACCOLTA LIQUIDI </string>
+    <string name="liquid_charts_help_content"> Questo e\' il contenuto dell\' info dialog della icona del grafico della raccolta liquidi della schermata dei grafici</string>
+    <string name="liquid_charts_help_description"> - ICONA GRAFICO RACCOLTA LIQUIDI: descrizione della icona del grafico della raccolta liquidi sotto la schermata grafici</string>
+    <string name="liquid_charts_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA DEL GRAFICO DELLA RACCOLTA LIQUIDI DELLA SCHERMATA GRAFICI</string>
+
+    <string name="bt_charts_help"> - ICONA BLUETOOTH: Il colore di questa icona permette di sapere se siamo collegati o meno: se di colore verde significa che siamo collegati. </string>
+    <string name="bt_charts_help_title"> ICONA BLUETOOTH </string>
+    <string name="bt_charts_help_content"> Questo e\' il contenuto dell\' info dialog della icona bluetooth della schermata dei grafici</string>
+    <string name="bt_charts_help_description"> - ICONA BLUETOOTH: descrizione della icona bluetooth sotto la schermata dei grafici</string>
+    <string name="bt_charts_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BLUETOOTH DELLA SCHERMATA DEI GRAFICI</string>
+
+    <string name="draw_charts_help"> - AREA DEL GRAFICO: Questa e\' la zona della schermata dove viene mostrato il grafico con l\'andamento dei valori.
+        Il grafico mostra l\'andamento delle ultime dodici ore ma e\' possibile scorrere il grafico e ingrandire o ridurre alcune parti.
+        Nb: Nel caso del grafico della raccolta liquidi e\' possibile conoscere il valore attuale della raccolta oraria cliccando sulla barra corrispondente.</string>
+    <string name="draw_charts_help_title"> AREA DEI GRAFICI </string>
+    <string name="draw_charts_help_content"> Questo e\' il contenuto dell\' info dialog sulla aerea dei grafici della schermata dei grafici</string>
+    <string name="draw_charts_help_description"> - AREA DEI GRAFICI: descrizione della area dei grafici sotto la schermata dei grafici</string>
+    <string name="draw_charts_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST SULLA AREA DEI GRAFICI DELLA SCHERMATA DEI GRAFICI</string>
+
+    <!-- ********************************************  HISTORICAL SCREEN : ***************************************************************** -->
+
+    <string name="back_historical_help"> - ICONA BACK: cliccando su questa icona si ritorna alla Home screen. </string>
+    <string name="back_historical_help_title"> ICONA BACK </string>
+    <string name="back_historical_help_content"> Questo e\' il contenuto dell\' info dialog della icona back della schermata dei dati storici</string>
+    <string name="back_historical_help_description"> - ICONA BACK: descrizione della icona back sotto la schermata dei dati storici</string>
+    <string name="back_historical_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BACK DELLA SCHERMATA DEI DATI STORICI</string>
+
+    <string name="visualization_historical_help"> - ICONA CAMBIO DI VISUALIZZAZIONE: Questa icona permette di passare dalla visualizzazione dei salvataggi piu\' recenti per singola unità alla visualizzazione dell\'elenco completo di tutti i salvataggi.  </string>
+    <string name="visualization_historical_help_title"> ICONA CAMBIO DI VISUALIZZAZIONE </string>
+    <string name="visualization_historical_help_content"> Questo e\' il contenuto dell\' info dialog della icona cambio di visualizzazione della schermata dei dati storici</string>
+    <string name="visualization_historical_help_description"> - ICONA CAMBIO DI VISUALIZZAZIONE: descrizione della icona cambio di visualizzazione sotto la schermata dei dati storici</string>
+    <string name="visualization_historical_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA CAMBIO DI VISUALIZZAZIONE DELLA SCHERMATA DEI DATI STORICI</string>
+
+    <string name="units_historical_help"> - ICONE DEI SALVATAGGI: Cliccando su una di queste icone si accede alla schermata grafici con i valori del paziente selezionato.
+        Tenendo premuto su una di queste unità si apre il menu\' con la possibilità per l\'invio del file, il cambiamento del nome e la cancellazione.
+        E\' possibile la selezione multipla di piu\' files per l\'invio e la cancellazione in massa.</string>
+    <string name="units_historical_help_title"> ICONE DEI SALVATAGGI </string>
+    <string name="units_historical_help_content"> Questo e\' il contenuto dell\' info dialog delle icone dei salvataggi della schermata dei dati storici </string>
+    <string name="units_historical_help_description"> - ICONE DEI SALVATAGGI : descrizione delle icone dei salvataggi sotto la schermata dei dati storici </string>
+    <string name="units_historical_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE DEI SALVATAGGI DELLA SCHERMATA DEI DATI STORICI</string>
+
+    <string name="sidebar_historical_help"> - ICONE SIDEBAR: Cliccare su una di queste icone permette la navigazione veloce alla schermata corrispondente. </string>
+    <string name="sidebar_historical_help_title"> ICONE SIDEBAR </string>
+    <string name="sidebar_historical_help_content"> Questo e\' il contenuto dell\' info dialog delle icone sidebar della schermata dei dati storici </string>
+    <string name="sidebar_historical_help_description"> - ICONE SIDEBAR : descrizione delle icone sidebar sotto la schermata dei dati storici </string>
+    <string name="sidebar_historical_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE SIDEBAR DELLA SCHERMATA DEI DATI STORICI</string>
+
+
+    <!-- ********************************************  SETTINGS SCREEN : ***************************************************************** -->
+
+    <string name="back_settings_help"> - ICONA BACK: cliccando su questa icona si ritorna alla homescreen. </string>
+    <string name="back_settings_help_title"> ICONA BACK </string>
+    <string name="back_settings_help_content"> Questo e\' il contenuto dell\' info dialog della icona back della schermata delle impostazioni </string>
+    <string name="back_settings_help_description"> - ICONA BACK: descrizione della icona back sotto la schermata delle impostazioni </string>
+    <string name="back_settings_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BACK DELLA SCHERMATA DELLE IMPOSTAZIONI </string>
+
+    <string name="coupling_settings_help"> - ICONA ACCOPPIAMENTO: Cliccando su questa icona si passa alla schermata di accoppiamento o disaccoppiamento delle unità </string>
+    <string name="coupling_settings_help_title"> ICONA ACCOPPIAMENTO </string>
+    <string name="coupling_settings_help_content"> Questo e\' il contenuto dell\' info dialog della icona accoppiamento della schermata delle impostazioni </string>
+    <string name="coupling_settings_help_description"> - ICONA ACCOPPIAMENTO : descrizione della icona accoppiamento sotto la schermata delle impostazioni </string>
+    <string name="coupling_settings_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA ACCOPPIAMENTO DELLA SCHERMATA DELLE IMPOSTAZIONI </string>
+
+    <string name="sidebar_settings_help"> - ICONE SIDEBAR: Cliccare su una di queste icone permette la navigazione veloce alla schermata corrispondente. </string>
+    <string name="sidebar_settings_help_title"> ICONE SIDEBAR </string>
+    <string name="sidebar_settings_help_content"> Questo e\' il contenuto dell\' info dialog delle icone sidebar della schermata delle impostazioni </string>
+    <string name="sidebar_settings_help_description"> - ICONE SIDEBAR : descrizione delle icone sidebar sotto la schermata delle impostazioni </string>
+    <string name="sidebar_settings_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE SIDEBAR DELLA SCHERMATA DELLE IMPOSTAZIONI </string>
+
+    <!-- ********************************************  COUPLING SCREEN : ***************************************************************** -->
+
+    <string name="back_coupling_help"> - ICONA BACK: cliccando su questa icona si ritorna alla schermata delle impostazioni. </string>
+    <string name="back_coupling_help_title"> ICONA BACK </string>
+    <string name="back_coupling_help_content"> Questo e\' il contenuto dell\' info dialog della icona back della schermata di accoppiamento unità</string>
+    <string name="back_coupling_help_description"> - ICONA BACK: descrizione della icona back sotto la schermata di accoppiamento unità</string>
+    <string name="back_coupling_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BACK DELLA SCHERMATA DI ACCOPPIAMENTO UNITA\'</string>
+
+    <string name="search_coupling_help"> - ICONA SEARCH: questa icona permette di sapere se il dispositivo e\' ancora in fase di ricerca oppure l\'ha completata. Cliccando lancia nuovamente la ricerca. </string>
+    <string name="search_coupling_help_title"> ICONA SEARCH </string>
+    <string name="search_coupling_help_content"> Questo e\' il contenuto dell\' info dialog della icona search della schermata di accoppiamento unità</string>
+    <string name="search_coupling_help_description"> - ICONA SEARCH: descrizione della icona search sotto la schermata di accoppiamento unità</string>
+    <string name="search_coupling_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA SEARCH DELLA SCHERMATA DI ACCOPPIAMENTO UNITA\'</string>
+
+    <string name="bt_coupling_help"> - ICONA BLUETOOTH: Il colore di questa icona permette di sapere se siamo collegati o meno: se di colore verde significa che siamo collegati. </string>
+    <string name="bt_coupling_help_title"> ICONA BLUETOOTH </string>
+    <string name="bt_coupling_help_content"> Questo e\' il contenuto dell\' info dialog della icona bluetooth della schermata di accoppiamento unità</string>
+    <string name="bt_coupling_help_description"> - ICONA BLUETOOTH: descrizione della icona bluetooth sotto la schermata di accoppiamento unità</string>
+    <string name="bt_coupling_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLA ICONA BLUETOOTH DELLA SCHERMATA DI ACCOPPIAMENTO UNITA\'</string>
+
+    <string name="paired_coupling_help"> - ICONE UNITA\' ACCOPPIATE: Queste sono le unità attualmente accoppiate. Cliccando su una di queste unità si disaccoppia l\'unità corrispondente. </string>
+    <string name="paired_coupling_help_title"> ICONE UNITA\' ACCOPPIATE </string>
+    <string name="paired_coupling_help_content"> Questo e\' il contenuto dell\' info dialog delle icone delle unità accoppiate della schermata di accoppiamento unità </string>
+    <string name="paired_coupling_help_description"> - ICONE UNITA\' ACCOPPIATE : descrizione delle icone delle unità accoppiate sotto la schermata di accoppiamento unità</string>
+    <string name="paired_coupling_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE UNITA\' ACCOPPIATE DELLA SCHERMATA DI ACCOPPIAMENTO UNITA\'</string>
+
+    <string name="unpaired_coupling_help"> - ICONE UNITA\' DISACCOPPIATE: Queste sono le unità disaccoppiate in prossimità del tablet. Cliccando su una di queste unità si provvede ad accoppiare la stessa unità.</string>
+    <string name="unpaired_coupling_help_title"> ICONE UNITA\' DISACCOPPIATE </string>
+    <string name="unpaired_coupling_help_content"> Questo e\' il contenuto dell\' info dialog delle icone delle unità disaccoppiate della schermata di accoppiamento unità </string>
+    <string name="unpaired_coupling_help_description"> - ICONE UNITA\' DISACCOPPIATE : descrizione delle icone delle unità disaccoppiate sotto la schermata di accoppiamento unità</string>
+    <string name="unpaired_coupling_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE UNITA\' DISACCOPPIATE DELLA SCHERMATA DI ACCOPPIAMENTO UNITA\'</string>
+
+    <string name="sidebar_coupling_help"> - ICONE SIDEBAR: Cliccare su una di queste icone permette la navigazione veloce alla schermata corrispondente. </string>
+    <string name="sidebar_coupling_help_title"> ICONE SIDEBAR </string>
+    <string name="sidebar_coupling_help_content"> Questo e\' il contenuto dell\' info dialog delle icone sidebar della schermata di accoppiamento unità</string>
+    <string name="sidebar_coupling_help_description"> - ICONE SIDEBAR: descrizione delle icone sidebar sotto la schermata di accoppiamento unità</string>
+    <string name="sidebar_coupling_help_message"> QUESTO E\' IL TESTO DEL BREVE MESSAGGIO TOAST DELLE ICONE SIDEBAR DELLA SCHERMATA DI ACCOPPIAMENTO UNITA\'</string>
+
+    <!-- PER LO SPINNER - MENU A TENDINA -->
+    <string-array name="screens_array">
+        <item>All screens</item>
+        <item>Home screen</item>
+        <item>Selection screen</item>
+        <item>Livedata screen</item>
+        <item>Charts screen</item>
+        <item>Historical screen</item>
+        <item>Settings screen</item>
+        <item>Coupling screen</item>
+    </string-array>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Richiesta iniziale del permesso alla localizzazione -->
+    <string name="app_name">SilverLine App</string>
+    <string name="please_grant_loc_access">Per favore garantisci il permesso di localizzazione.</string>
+    <string name="need_loc_access">Questa App ha bisogno del permesso di localizzazione</string>
+    <string name="fun_limted">Funzionalità limitate</string>
+    <string name="since_perm_not_granted">Poiche\' il permesso di localizzazione non e\' stato concesso questa app funzionera con funzionalita\' limitate.</string>
+    <string name="cmH2O">cmH<small> 2 </small>O</string>
+
+    <!-- Dialog iniziale di richiesta di chiave di licenza -->
+    <string name="license_title">Per favore inserisci la chiave di licenza</string>
+    <string name="license_message">Per favore inserisci la chiave di licenza nel campo qui sotto per poter utilizzare l\'App.</string>
+    <string name="license_positive_button">VERIFICA</string>
+    <string name="license_negative_result">LA CHIAVE INSERITA NON E\' CORRETTA</string>
+    <string name="license_positive_result">LA CHIAVE INSERITA E\' CORRETTA</string>
+
+    <!-- Si deve impostare un layout MODELLO che comprenda tutte le scritte che ci vogliono e potrebbe essere quello italiano e con anche lo stile!!! -->
+
+    <!-- Connect Screen -->
+    <string name="back_button_connect">TORNA</string>
+    <string name="patient_connect">PAZIENTE</string>
+
+    <!-- Live Screen -->
+    <!-- Una parte legata alle scritte nella schermata -->
+    <string name="back_button_live">TORNA</string>
+    <string name="patient_live">PAZIENTE</string>
+    <string name="intrapleural_pressure_live">PRESSIONE INTRAPLEURICA</string>
+    <string name="last_liquid_live">ULTIME     24h</string>
+    <string name="average_air_live">MEDIA ORARIA</string>
+    <string name="minute_air_live">1 MINUTO</string>
+
+    <!-- Charts Screen -->
+    <string name="back_button_charts">TORNA</string>
+    <string name="patient_charts">PAZIENTE</string>
+    <string name="time_charts">Tempo (ore)</string>
+    <string name="air_leakages_legenda_charts">Perdite aeree [ml/min] media</string>
+    <string name="air_vacuum_legenda_charts">Vuoto applicato [cmH2O]</string>
+    <string name="liquid_legenda_charts">Ammontare liquidi [ml]</string>
+    <string name="liquid_houraxis_charts">Ammontare liquidi per ora [ml]</string>
+    <string name="liquid_totalaxis_charts">Ammontare totale liquidi [ml]</string>
+
+    <!-- Historical Screen -->
+    <string name="back_button_historical">TORNA</string>
+
+    <string name="rename_title_historical">Rinomina il File</string>
+    <string name="rename_description_historical">Inserisci il nuovo nome del file (senza estensione) :</string>
+    <string name="rename_positive_historical">Rinomina</string>
+    <string name="rename_negative_historical">Annulla</string>
+
+    <string name="delete_title_historical">Elimina Files</string>
+    <string name="delete_description_historical">Vuoi veramente eliminare i files: %1$s ?</string>
+    <string name="delete_positive_historical">Elimina</string>
+    <string name="delete_negative_historical">Annulla</string>
+
+    <!-- Settings Screen -->
+    <string name="pair_settings">ACCOPPIA REDLINE</string>
+    <string name="languages_settings">SCELTA LINGUE</string>
+    <string name="back_button_settings">TORNA</string>
+
+    <!-- Pairing Screen -->
+    <string name="title_pairing">ACCOPPIA NUOVE REDLINE</string>
+    <string name="paired_pairing">REDLINE ACCOPPIATE</string>
+    <string name="unpaired_pairing">REDLINE NON ACCOPPIATE</string>
+    <string name="found_pairing">TROVATE %1$S NUOVE REDLINE</string>
+    <string name="back_button_pairing">TORNA</string>
+
+    <!-- Languages settings screen -->
+    <string name="back_button_languages">TORNA</string>
+    <string name="title_languages">Scelta lingue</string>
+    <string name="english_languages">Inglese</string>
+    <string name="italian_languages">Italiano</string>
+    <string name="french_languages">Francese</string>
+
+    <!-- Other items different from screens: Layout of single item, Dialogs etc.. -->
+
+    <!-- UNPAIRING DIALOG -->
+    <string name="title_unpairing_dialog">DISACCOPPIA DEVICE %1$S</string>
+    <string name="description_unpairing_dialog">Per favore conferma che vuoi disaccoppiare il device %1$S</string>
+    <string name="positive_unpairing_dialog">Conferma</string>
+    <string name="negative_unpairing_dialog">Annulla</string>
+
+    <!-- DEVICE LIST SINGLE ITEM -->
+    <string name="device_singleitem_patient">PAZIENTE</string>
+
+    <!-- DOWNLOADING DIALOG-->
+    <string name="downloading_message">DATABASE IN DOWNLOAD</string>
+
+    <!-- ERROR DOWNLOADING DIALOG -->
+    <string name="error_downloading_message">ATTENZIONE! \n E\' CAPITATO UN ERRORE NEL DOWNLOAD.</string>
+
+</resources>

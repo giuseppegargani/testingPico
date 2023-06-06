@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="license_key">license_key</string>
+    <string name="boolean_license_key">boolean_license_key</string>
+    <string name="default_license_key">default</string>
+    <bool name="default_boolean_license_key">false</bool>
+</resources>

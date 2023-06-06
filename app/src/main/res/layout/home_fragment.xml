@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!--Togliere warnings e mettere ImageButtons invece di Image semplici-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sfondo_app_solo"
+        tools:context=".HomeFragment">
+
+        <RelativeLayout
+            android:id="@+id/patientIconRelativeHome"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/bolla"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/folderIconRelativeHome"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="54dp"
+                android:layout_marginTop="55dp"
+                app:srcCompat="@drawable/hospital_bed"
+                app:tint="@color/purple_500" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/versionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:text="SW REV. 31-05-2023"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/folderIconRelativeHome" />
+
+        <TextView
+            android:id="@+id/LogoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:text="Redax"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toTopOf="@+id/folderIconRelativeHome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/folderIconRelativeHome"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/bolla"
+            app:layout_constraintBottom_toBottomOf="@+id/patientIconRelativeHome"
+            app:layout_constraintEnd_toStartOf="@+id/settingsIconRelativeHome"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/patientIconRelativeHome">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="58dp"
+                android:layout_marginTop="54dp"
+                app:tint="@color/purple_500"
+                app:srcCompat="@drawable/folder" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/settingsIconRelativeHome"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bolla"
+            app:layout_constraintBottom_toTopOf="@+id/helpIconRelativeHome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/folderIconRelativeHome"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="31dp"
+                app:srcCompat="@drawable/ic_baseline_settings_48"
+                app:tint="@color/purple_500" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/helpIconRelativeHome"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bolla"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/settingsIconRelativeHome"
+            app:layout_constraintTop_toBottomOf="@+id/settingsIconRelativeHome">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="33dp"
+                app:tint="@color/purple_500"
+                app:srcCompat="@drawable/ic_baseline_help_outline_48" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

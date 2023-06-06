@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PressBar">
+        <attr name="valoreAttuale" format="integer" />
+        <attr name="valoreMassimo" format="integer" />
+        <attr name="valoreMinimo" format="integer" />
+    </declare-styleable>
+</resources>

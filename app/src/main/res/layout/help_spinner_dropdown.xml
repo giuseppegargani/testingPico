@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Invece di cambiare direttamente fontsize e height si puo' creare ed assegnare una risorsa style in comune con il layout dello spinner chiuso!!!! -->
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:height="14dp"
+    android:background="@color/azzurro"
+    android:ellipsize="marquee"
+    android:paddingStart="12dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="12dp"
+    android:singleLine="true"
+    android:text="Eccomi"
+    android:textColor="@color/yellow"
+    android:textSize="20sp" />
