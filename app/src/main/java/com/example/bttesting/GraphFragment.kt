@@ -18,7 +18,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.bttesting.databinding.GraphFragmentBinding
-import com.example.bttesting.utils.calcolaSommatoria
 import com.example.bttesting.viewModels.BluetoothViewModel
 import com.github.mikephil.charting.charts.CombinedChart
 import com.github.mikephil.charting.charts.LineChart
@@ -34,42 +33,8 @@ import com.github.mikephil.charting.utils.MPPointF
 import java.io.File
 import java.util.ArrayList
 
-/* VERIFICARE TUTTI I ONCREATEVIEW che non lanci funzioni che vanno lanciate in altri metodi del ciclo di vita
-
- */
-
-/* CONCETTI INTERESSANTI:
-    - cercare una stringa dopo una stringa  .SUBSTRINGAFTER!!!!
-    - OTTENERE IL NOME DA UNA PATH: val file= File(patientUri!!.toUri().path) !!!!
-    - Max di una serie di valori: MaxOrNull    https://stackoverflow.com/questions/50580240/kotlin-get-maximum-value-in-arraylist-of-ints
-    - TitanWold e MpAndroidChart:     https://titanwolf.org/Network/Articles/Article?AID=eab3958c-0fcf-4b01-a708-7ada8b51d218
-    - Nascondere una View programmaticamente:     https://stackoverflow.com/questions/42608060/android-hide-an-element
-    - Grafico combinato sovrapposto: https://stackoverflow.com/questions/31056095/mpandroidchart-combined-chart
-    - Media mobile in kotlin: https://stackoverflow.com/questions/46049241/whats-the-fastest-simplest-way-to-calculate-a-moving-average-in-kotlin
-    - Creare una classe di formattazione degli assi: https://www.youtube.com/watch?v=0BsPW2DpQgE&list=PLFh8wpMiEi89LcBupeftmAcgDKCeC24bJ&index=8
-    - NotifyDataSetChanged per aggiornare valori grafici in tempo reale: https://www.youtube.com/watch?v=0BsPW2DpQgE&list=PLFh8wpMiEi89LcBupeftmAcgDKCeC24bJ&index=8
-    - SetCancelable in DialogFragment: https://developer.android.com/reference/androidx/fragment/app/DialogFragment#setCancelable(boolean)
-    - Background Tint List: https://stackoverflow.com/questions/45825609/programmatically-change-backgroundtint-of-imageview-with-vector-asset-for-backgr
-    - Documentazione MpAndroidChart:
-        https://www.youtube.com/watch?v=N-_X6G1KgAY TUTORIAL!!!! video
-        https://github.com/PhilJay/MPAndroidChart/tree/master/MPChartExample/src/main/java/com/xxmassdeveloper/mpchartexample
-        https://github.com/PhilJay/MPAndroidChart#examples
-        https://medium.com/@clyeung0714/using-mpandroidchart-for-android-application-barchart-540a55b4b9ef
-        https://weeklycoding.com/mpandroidchart/
-    - Metodo per evitare che invii valori durante inizializzazione: if((it==0)&&(viewLifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED))){
-    - TUTORIAL UFFICIALE PER SHARED VIEWMODEL: https://developer.android.com/codelabs/basic-android-kotlin-training-shared-viewmodel#0
-    - ViewLifeCycle owner data: https://stackoverflow.com/questions/66158276/fragment-viewlifecycleownerlivedata-observe-doesnt-call-with-kodein
-    - 5 errori comuni con architettura: https://proandroiddev.com/5-common-mistakes-when-using-architecture-components-403e9899f4cb
-    - LiveData (articolo interessante) https://www.raywenderlich.com/10391019-livedata-tutorial-for-android-deep-dive
-    - DialogFragment:   https://stackoverflow.com/questions/68601602/how-to-observe-live-data-for-alert-dialog
-                        VIDEO INTERESSANTE: https://www.youtube.com/watch?v=OfEOYxWVRTM
-    - ViewModel onChange: https://stackoverflow.com/questions/48914311/viewmodel-onchange-gets-called-multiple-times-when-back-from-fragment
-    - Nascondere un asse (e descrizione): https://stackoverflow.com/questions/29030814/how-to-hide-legends-and-axis-in-mpandroidchart
- */
-
 class GraphFragment : Fragment() {
 
-    //delegato che indica che il ciclo di vita e' quello della Activity correlata e non del fragment
     private val btViewModel: BluetoothViewModel by activityViewModels()
 
     private lateinit var grafico: LineChart
@@ -79,7 +44,6 @@ class GraphFragment : Fragment() {
     private lateinit var airRelative: RelativeLayout
     private lateinit var liquidRelative: RelativeLayout
     private var tempGraph: Pair<Int, MutableList<MutableList<Float>>>? = null //o meglio nullable     per poter rilanciare la media con i valori temporanei
-    //private var movingAvg = 4
     private lateinit var binding: GraphFragmentBinding
 
 
@@ -103,7 +67,6 @@ class GraphFragment : Fragment() {
 
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<GraphFragmentBinding>(inflater, R.layout.graph_fragment, container, false)
-        //binding.movingAvgGraph.text= movingAvg.toString()
 
         //se si naviga da historical data il valore della variabile offline viene cambiato a true
         if(offline==true){
@@ -136,32 +99,12 @@ class GraphFragment : Fragment() {
             requireActivity().onBackPressed()
         }
 
-        //relativo ai pulsanti per la media mobile
-        /*binding.leftArrowGraph.setOnClickListener {
-            if (movingAvg >= 2) {
-                movingAvg -= 1;
-                binding.movingAvgGraph.text = movingAvg.toString();
-                tempGraph?.let {
-                    visualizzaGrafico(movingAvg, tempGraph!!)
-                }
-            }
-        }
-
-        binding.rightArrowGraph.setOnClickListener {
-            movingAvg+=1
-            binding.movingAvgGraph.text=movingAvg.toString()
-            tempGraph?.let {
-                visualizzaGrafico(movingAvg, tempGraph!!)
-            }
-        }*/
-
         lungsRelative.setOnClickListener {
             if(offline==true){patientUri?.let { btViewModel.leggiFileOffline(patientUri!!,1) }} //se variabile offline e' true leggi file
             else {btViewModel.lanciaGrafico(1)}
             lungsRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.orange) }
             airRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.material_on_primary_disabled) }
             liquidRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.material_on_primary_disabled) }
-            //movingAvg=4; binding.movingAvgGraph.text = movingAvg.toString();
         }
 
         airRelative.setOnClickListener {
@@ -170,7 +113,6 @@ class GraphFragment : Fragment() {
             airRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.orange) }
             liquidRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.material_on_primary_disabled) }
             lungsRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.material_on_primary_disabled) }
-            //movingAvg=4; binding.movingAvgGraph.text = movingAvg.toString();
         }
 
         liquidRelative.setOnClickListener {
@@ -179,7 +121,6 @@ class GraphFragment : Fragment() {
             liquidRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.orange) }
             airRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.material_on_primary_disabled) }
             lungsRelative.backgroundTintList = context?.let { it1 -> ContextCompat.getColorStateList(it1, R.color.material_on_primary_disabled) }
-            //movingAvg=4; binding.movingAvgGraph.text = movingAvg.toString();
         }
 
         btViewModel.textChart.observe(viewLifecycleOwner, Observer {

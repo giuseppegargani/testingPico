@@ -13,11 +13,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.bttesting.databinding.ErrorDownloadingDbBinding
 import com.example.bttesting.viewModels.BluetoothViewModel
 
-/* Si deve rifare qualche cosa di simile per altri possibili errori
-
- */
-
-
 class ErrorDownloadDialog: DialogFragment() {
 
     val btViewModel: BluetoothViewModel by activityViewModels()

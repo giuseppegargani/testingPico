@@ -382,7 +382,7 @@ class BluetoothViewModel(val btService : BluetoothService, application: Applicat
 
 
     /**
-     * Update the values of the select attribut of the instance of DeviceData (Dataclass) and the local variable (deviceSel).
+     * Update the values of the select attribute of the instance of DeviceData (Dataclass) and the local variable (deviceSel).
      * It has two default parameters: one for deviceSel and another for the list of values (it takes the local values)
      */
     fun cambiaListaConnessi(device: DeviceData? = deviceSel, listaValori: List<DeviceData>? = lista.value){

@@ -17,24 +17,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bttesting.viewModels.BluetoothViewModel
 
-/* RECYCLERVIEW NOT CLICKABLE QUANDO AGGIORNA ogni periodo    VIEWMODEL
-    Se si preme quando aggiorna (ogni tot) non si ottiene niente
-    ma aggiorna ogni tot secondi e lo mostra
-    https://stackoverflow.com/questions/33951399/how-to-make-recyclerviews-items-non-clickable/33951501
-    TOGLI EVENTO, AGGIORNA TUTTI INSIEMI DEVICES, RIMETTI EVENT LISTENER
-    verifica che ha finito di mettere tutte le unità
- */
-
-/*STEVDZA-SAN TUTORIALS:     IMPORTANTE: https://www.youtube.com/watch?v=THt9QISnIMQ
-
-*/
-
 class ConnectFragment : Fragment() {
 
-    //delegato che indica che il ciclo di vita e' quello della Activity correlata e non del fragment
     private val btViewModel: BluetoothViewModel by activityViewModels()
 
-    //textview e immagine
     lateinit var btImmagine: ImageView
     lateinit var btIcon: ImageView
     lateinit var adapter: DevicesListAdapter
@@ -42,8 +28,7 @@ class ConnectFragment : Fragment() {
     var mAdapter: BluetoothAdapter? = null
 
     companion object {
-        //codici per onActivityResult (totalmente arbitrari ma utili nel caso di più richieste)
-        private val REQUEST_ENABLE_BT = 123
+        private val REQUEST_ENABLE_BT = 123 //codice arbitrario per distinguere onActivityResult
     }
 
     override fun onCreateView(
@@ -55,8 +40,7 @@ class ConnectFragment : Fragment() {
 
         btIcon = binding.btIconConnect
 
-        /* Adapter con eventListener: cambia colore di sfondo; se si e' connessi naviga semplicemente, altrimenti prova a connettersi
-         */
+        // Adapter con eventListener: cambia colore di sfondo; quando si e' gia' connessi ad un device naviga semplicemente dentro alla schermata di livedata, altrimenti prova a connettersi
         adapter = DevicesListAdapter(DeviceDataListener {
             if((btViewModel.connesso.value==true)&&(it.deviceHardwareAddress==btViewModel.btService.connectedDevice?.address)){this.findNavController().navigate(R.id.action_connectFragment_to_liveDataFragment)}
             else{
