@@ -15,7 +15,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.preference.PreferenceManager
 import com.example.bttesting.databinding.ActivityMainBinding
 import com.example.bttesting.service.BluetoothService
 import com.example.bttesting.viewModels.BluetoothViewModel
@@ -52,14 +51,7 @@ class MainActivity : AppCompatActivity() {
         binding.bluetoothViewModel = btViewModel  //per usare Databinding
 
         checkPermissions()
-
-
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val booleanoInserito = sharedPreferences.getBoolean("boolean_license_key",false)
-
-        if(!booleanoInserito){
-            checkLicenseDialog(this, sharedPreferences)
-        }
+        checkLicense()
     }
 
     override fun onDestroy() {
@@ -109,6 +101,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //da unire con il dialogo!!!!!
+    private fun checkLicense(){
+        val licenseSharedPref: SharedPreferences = getSharedPreferences("licenza", Context.MODE_PRIVATE)
+        val booleanoInserito = licenseSharedPref.getBoolean("boolean_license_key",false)
+
+        if(!booleanoInserito){
+            checkLicenseDialog(this, licenseSharedPref)
+        }
+    }
+
     /**
      * Funzione che viene invocata dopo aver concesso o negato il permesso di localizzazione. Se viene negato il permesso mostra un altro dialog in cui si spiega che l'app avrà una funzionalità limitata.
      */
@@ -150,7 +152,9 @@ class MainActivity : AppCompatActivity() {
 
                         val chiaveInserita = taskEditText.text.toString()
 
-                        val booleanoVerifica: Boolean= verificaLicenza(chiaveInserita)
+                        //verifica che la lista di chiavi contenga il valore inserito
+                        //val booleanoVerifica: Boolean= verificaLicenza(chiaveInserita)
+                        val booleanoVerifica: Boolean= listaChiavi.contains(chiaveInserita)
                         if(booleanoVerifica){
                             Toast.makeText(c, R.string.license_positive_result, Toast.LENGTH_SHORT).show()
                             //modifica il valore memorizzato
