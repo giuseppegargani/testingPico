@@ -1,5 +1,6 @@
 package com.example.bttesting
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
@@ -28,7 +29,7 @@ class ConnectFragment : Fragment() {
     var mAdapter: BluetoothAdapter? = null
 
     companion object {
-        private val REQUEST_ENABLE_BT = 123 //codice arbitrario per distinguere onActivityResult
+        private val REQUEST_ENABLE_BT = 123 //codice arbitrario per distinguere intent
     }
 
     override fun onCreateView(
@@ -117,7 +118,8 @@ class ConnectFragment : Fragment() {
         return binding.root
     }
 
-    //rimane in fragment o si mette in Activity
+    //rimane in fragment o si mette in Activity    SUPPRESSLINT!! da togliere o meno!?!?!
+    @SuppressLint("MissingPermission")
     override fun onActivityResult(
         requestCode: Int, resultCode: Int, resultData: Intent?) {
         //richiesta di abilitare

@@ -27,16 +27,10 @@ class PairedAdapter(val clickListener: PairListener): RecyclerView.Adapter<Paire
     class ViewHolder private constructor(val binding: PairlistSingleItemBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(clickListener: PairListener, item: DeviceData) {
-            val res = itemView.context.resources
             binding.device = item
             binding.singleDeviceUnpairTextView.text = item.deviceName.toString()
             binding.clickListener = clickListener
             binding.executePendingBindings()
-            /*if (item.paired == false) {
-                itemView.setBackgroundResource(R.color.orange)
-            } else {
-                itemView.setBackgroundResource(R.color.full_trasparent)
-            }*/
         }
 
         companion object {
